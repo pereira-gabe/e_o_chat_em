@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <title>Ciferri</title>
+    <script src="script.js"></script>
+
 </head>
 <body>
 
-    <div id="GPT">
+    <div id="GPT" style="padding-left: 10px;">
         <h1>Contador de ChatGPT</h1>
         <p>Quantas vezes o Ciferri pesquisou algo no chatgpt durante a aula?</p>
-        <p>Atualmente: <span name="contadorGPT">0  </span><button name="btnGPT">Aumentar</button></p>
+        <p>Atualmente: <span id="contadorGPT">0  </span><button name="btnGPT" onclick="aumentar()" class="btn btn-primary">Aumentar</button></p>
     </div>
 
 </body>
