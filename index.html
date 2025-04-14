@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,30 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <title>Ciferri</title>
-
-    <script>
-
-    function aumentar(tipo) {
-        if (tipo === 1) {
-            let atual = parseInt(document.getElementById("contadorGPT").innerText) || 0;
-            atual++;
-            document.getElementById("contadorGPT").innerText = atual;
-        } else if (tipo === 2) {
-            let atual = parseInt(document.getElementById("contadorTigrinho").innerText) || 0;
-            atual++;
-            document.getElementById("contadorTigrinho").innerText = atual;
-        }
-    }
-
-    </script>
-
+    
 </head>
 <body>
 
     <div id="GPT" style="padding-left: 10px;text-align: center;">
         <h1>Contador de ChatGPT</h1>
         <p>Quantas vezes o Ciferri pesquisou algo no chatgpt durante a aula?</p>
-        <p>Atualmente: <span id="contadorGPT">0  </span><button name="btnGPT" onclick="aumentar(1)" class="btn btn-primary">Aumentar</button></p>
+        <p>Atualmente: <span id="contadorGPT">12</span></p>
     </div>
 
     <br>
@@ -37,7 +22,13 @@
     <div id="tigrinho" style="padding-left: 10px;text-align: center;">
         <h1>Contador de Robô do Ciferri</h1>
         <p>Quantas vezes o Ciferri mostrou o robô dele durante a aula?</p>
-        <p>Atualmente: <span id="contadorTigrinho">0  </span><button name="btnTigrinho" onclick="aumentar(2)" class="btn btn-primary">Aumentar</button></p>
+        <p>Atualmente: <span id="contadorTigrinho">10</span>></p>
+    </div>
+
+    <div id="tigrinho" style="padding-left: 10px;text-align: center;">
+        <h1>Contador de VÍRUS</h1>
+        <p>Quantas vezes o Ciferri PEGOU VÍRUS na aula baixando em site duvidoso?</p>
+        <p>Atualmente: <span id="contadorVirus">0</span></p>
     </div>
 
 </body>
