@@ -9,14 +9,19 @@
     <title>Ciferri</title>
 
     <script>
-        window.onload = function() {
-            let contador = 0;
-    
-            window.aumentar = function() {
-                contador++;
-                document.getElementById("contadorGPT").innerText = contador + "  ";
-            };
-        };
+
+    function aumentar(tipo) {
+        if (tipo === 1) {
+            let atual = parseInt(document.getElementById("contadorGPT").innerText) || 0;
+            atual++;
+            document.getElementById("contadorGPT").innerText = atual;
+        } else if (tipo === 2) {
+            let atual = parseInt(document.getElementById("contadorTigrinho").innerText) || 0;
+            atual++;
+            document.getElementById("contadorTigrinho").innerText = atual;
+        }
+    }
+
     </script>
 
 </head>
@@ -25,7 +30,15 @@
     <div id="GPT" style="padding-left: 10px;text-align: center;">
         <h1>Contador de ChatGPT</h1>
         <p>Quantas vezes o Ciferri pesquisou algo no chatgpt durante a aula?</p>
-        <p>Atualmente: <span id="contadorGPT">0  </span><button name="btnGPT" onclick="aumentar()" class="btn btn-primary">Aumentar</button></p>
+        <p>Atualmente: <span id="contadorGPT">0  </span><button name="btnGPT" onclick="aumentar(1)" class="btn btn-primary">Aumentar</button></p>
+    </div>
+
+    <br>
+
+    <div id="tigrinho" style="padding-left: 10px;text-align: center;">
+        <h1>Contador de Robô do Ciferri</h1>
+        <p>Quantas vezes o Ciferri mostrou o robô dele durante a aula?</p>
+        <p>Atualmente: <span id="contadorTigrinho">0  </span><button name="btnTigrinho" onclick="aumentar(2)" class="btn btn-primary">Aumentar</button></p>
     </div>
 
 </body>
