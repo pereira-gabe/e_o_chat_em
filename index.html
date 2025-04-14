@@ -1,17 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <title>Ciferri</title>
     
+    <script>
+        window.onload = function(){
+            fetch('https://raw.githubusercontent.com/pereira-gabe/e_o_chat_em/main/contadores.txt?t=' + Date.now())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar o arquivo");
+                }
+                return response.text();
+            })
+            .then(data => {
+                const linhas = data.split('\n')
+                                  .map(linha => linha.trim())
+                                  .filter(linha => linha !== '');
+                
+                if (linhas.length >= 3) {
+                    document.getElementById('contadorGPT').textContent = linhas[0];
+                    document.getElementById('contadorTigrinho').textContent = linhas[1];
+                    document.getElementById('contadorVirus').textContent = linhas[2];
+                } else {
+                    console.error("verificar txt");
+                    document.getElementById('contadorGPT').textContent = "13";
+                    document.getElementById('contadorTigrinho').textContent = "10";
+                    document.getElementById('contadorVirus').textContent = "1";
+                }
+            })
+            .catch(error => {
+                console.error("Erro:", error);
+                document.getElementById('contadorGPT').textContent = "0";
+                document.getElementById('contadorTigrinho').textContent = "0";
+                document.getElementById('contadorVirus').textContent = "0";
+            });
+        }
+    </script>
 </head>
 <body>
-
-    <div id="GPT" style="padding-left: 10px;text-align: center;">
+    <div style="padding-left: 10px; text-align: center;">
         <h1>Contador de ChatGPT</h1>
         <p>Quantas vezes o Ciferri pesquisou algo no chatgpt durante a aula?</p>
         <p>Atualmente: <span id="contadorGPT">13</span></p>
@@ -19,17 +49,16 @@
 
     <br>
 
-    <div id="tigrinho" style="padding-left: 10px;text-align: center;">
+    <div style="padding-left: 10px; text-align: center;">
         <h1>Contador de Robô do Ciferri</h1>
         <p>Quantas vezes o Ciferri mostrou o robô dele durante a aula?</p>
         <p>Atualmente: <span id="contadorTigrinho">10</span></p>
     </div>
 
-    <div id="tigrinho" style="padding-left: 10px;text-align: center;">
+    <div style="padding-left: 10px; text-align: center;">
         <h1>Contador de VÍRUS</h1>
         <p>Quantas vezes o Ciferri PEGOU VÍRUS na aula baixando em site duvidoso?</p>
         <p>Atualmente: <span id="contadorVirus">1</span></p>
     </div>
-
 </body>
 </html>
