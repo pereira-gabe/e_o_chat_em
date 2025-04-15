@@ -8,7 +8,7 @@
     
     <script>
         window.onload = function(){
-            fetch('https://raw.githubusercontent.com/pereira-gabe/e_o_chat_em/main/contadores.txt?t=' + Date.now())
+            fetch('https://raw.githubusercontent.com/pereira-gabe/e_o_chat_em/main/contadores/contadores.txt?t=' + Date.now())
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Erro ao carregar o arquivo");
