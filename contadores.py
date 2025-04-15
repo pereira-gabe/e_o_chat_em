@@ -2,15 +2,13 @@ import requests
 import os
 from pathlib import Path
 
-# Configurações para VS Code no Windows
 URL = "https://raw.githubusercontent.com/pereira-gabe/e_o_chat_em/main/contadores.txt"
 FILE_NAME = "contadores.txt"
-VSCODE_TERMINAL = True  # Modo otimizado para terminal do VS Code
+VSCODE_TERMINAL = True 
 
 def configurar_ambiente():
     """Configura o ambiente para o VS Code"""
     if VSCODE_TERMINAL:
-        # Cria a pasta 'contadores' no mesmo diretório do script
         script_dir = Path(__file__).parent
         contadores_dir = script_dir / "contadores"
         contadores_dir.mkdir(exist_ok=True)
