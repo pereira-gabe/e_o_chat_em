@@ -2,7 +2,7 @@ import requests
 import os
 from pathlib import Path
 
-URL = "https://raw.githubusercontent.com/pereira-gabe/e_o_chat_em/main/contadores.txt"
+URL = "https://raw.githubusercontent.com/pereira-gabe/e_o_chat_em/main/contadores/contadores.txt"
 FILE_NAME = "contadores.txt"
 VSCODE_TERMINAL = True 
 
