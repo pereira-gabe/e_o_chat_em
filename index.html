@@ -67,46 +67,45 @@
 
     <div style="padding-left: 10px; text-align: center;">
         <h1>PRECISA DE AJUDA???<span></span></h1>
-        <p>TUDO BEM AMIGO, SEUS PROBLEMAS ACABARAM PARA SEMPRE!!!!!!</p>
-        <p>segue o algortmo de Insertion Sort em MQL5 (MUITO MELHOR QUE C !!!!)<br>//+------------------------------------------------------------------+<br>
-//| Insertion Sort Algorithm                                        |<br>
-//+------------------------------------------------------------------+<br>
-void InsertionSort(double &array[])<br>
-{<br>
-    int n = ArraySize(array);<br>
-    <br>
-    for(int i = 1; i < n; i++)<br>
+        <p>TUDO BEM AMIGO, SEUS PROBLEMAS ACABARAM PARA SEMPRE!!!!!!</p><br>
+        <p style="text-align: left;"><span style="font-size: 20px;"><b>segue o algortmo de Insertion Sort em MQL5 (MUITO MELHOR QUE C !!!!)</b></span><br>//+------------------------------------------------------------------+<br>
+    //| Insertion Sort Algorithm                                        |<br>
+    //+------------------------------------------------------------------+<br>
+    void InsertionSort(double &array[])<br>
     {<br>
-        double key = array[i];<br>
-        int j = i - 1;<br>
+        int n = ArraySize(array);<br>
         <br>
-        // Move os elementos do array[0..i-1] que são maiores que key<br>
-        // para uma posição à frente de sua posição atual<br>
-        while(j >= 0 && array[j] > key)<br>
+        for(int i = 1; i < n; i++)<br>
         {<br>
-            array[j + 1] = array[j];<br>
-            j--;<br>
+            double key = array[i];<br>
+            int j = i - 1;<br>
+            <br>
+            // Move os elementos do array[0..i-1] que são maiores que key<br>
+            // para uma posição à frente de sua posição atual<br>
+            while(j >= 0 && array[j] > key)<br>
+            {<br>
+                array[j + 1] = array[j];<br>
+                j--;<br>
+            }<br>
+            array[j + 1] = key;<br>
         }<br>
-        array[j + 1] = key;<br>
     }<br>
-}<br>
-<br>
-//+------------------------------------------------------------------+<br>
-//| Exemplo de uso do Insertion Sort                                |<br>
-//+------------------------------------------------------------------+<br>
-void OnStart()<br>
-{<br>
-    double prices[] = {1.2345, 1.2321, 1.2356, 1.2300, 1.2389, 1.2400};<br>
-    int size = ArraySize(prices);<br>
     <br>
-    Print("Array antes da ordenação:");<br>
-    ArrayPrint(prices);<br>
-    <br>
-    InsertionSort(prices);<br>
-    <br>
-    Print("Array após a ordenação:");<br>
-    ArrayPrint(prices);<br>
-}</p>
-    </div>
+    //+------------------------------------------------------------------+<br>
+    //| Exemplo de uso do Insertion Sort                                |<br>
+    //+------------------------------------------------------------------+<br>
+    void OnStart()<br>
+    {<br>
+        double prices[] = {1.2345, 1.2321, 1.2356, 1.2300, 1.2389, 1.2400};<br>
+        int size = ArraySize(prices);<br>
+        <br>
+        Print("Array antes da ordenação:");<br>
+        ArrayPrint(prices);<br>
+        <br>
+        InsertionSort(prices);<br>
+        <br>
+        Print("Array após a ordenação:");<br>
+        ArrayPrint(prices);<br>
+    }</p>
 </body>
 </html>
